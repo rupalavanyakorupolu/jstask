@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const storeItems = [
+  { id: 1, name: 'Apple', category: 'Fruit', price: 1.2 },
+  { id: 2, name: 'Banana', category: 'Fruit', price: 0.8 },
+  { id: 3, name: 'Carrot', category: 'Vegetable', price: 0.5 },
+  { id: 4, name: 'Broccoli', category: 'Vegetable', price: 1.5 },
+  { id: 5, name: 'Shampoo', category: 'Beauty', price: 3.0 },
+  { id: 6, name: 'Toothpaste', category: 'Beauty', price: 2.5 },
+  { id: 7, name: 'Chicken', category: 'Meat', price: 4.0 },
+  { id: 8, name: 'Beef', category: 'Meat', price: 5.0 },
+];
+
+        const categorizedItems = {
+  Fruits: [],
+  Vegetables: [],
+  Beauty: [],
+  Meat: []
+};
+
+for (let i in storeItems) 
+{
+  const item = storeItems[i];
+  switch (item.category) {
+    case 'Fruit':
+      categorizedItems.Fruits.push(item);
+      break;
+    case 'Vegetable':
+      categorizedItems.Vegetables.push(item);
+      break;
+    case 'Beauty':
+      categorizedItems.Beauty.push(item);
+      break;
+    case 'Meat':
+      categorizedItems.Meat.push(item);
+      break;
+    default:
+      break;
+  }
+}
+
+console.log(categorizedItems);
+
+    </script>
+</body>
+</html>

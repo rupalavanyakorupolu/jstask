@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #colorBox {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="colorBox"></div>
+<button id="generateColorBtn">Colors</button>
+
+<script>
+    let arr=["red","orange","blue","pink"];
+        count=0;
+        function bg(){
+            document.body.style.background=arr[count];
+            count++;
+            if(count==arr.length)count=3;
+        }
+    const colorBox = document.getElementById('colorBox');
+    const button = document.getElementById('generateColorBtn');
+
+    button.addEventListener('click', () => {
+        const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        colorBox.style.backgroundColor = randomColor;
+        colorBox.innerText = randomColor; // Display the color code
+    });
+</script>
+
+</body>
+</html>
