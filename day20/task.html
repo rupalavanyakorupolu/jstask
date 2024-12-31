@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type ="text" id="inp1">
+    <input type ="num" id="inp1">
+    <button id="btn" on click ="fun()">click</button>
+
+    <script>
+        var inp1=document.getElementById("inp1");
+        var inp2=document.getElementById("inp2");
+        function fun(){
+            console.log(inp1.value)
+            console.log(inp2.value)
+            localStorage.setItem("username",inp1.value);
+            localStorage.setItem("age",inp2.value);
+            window.open("./sub.html")
+        }
+
+
+    </script>
+</body>
+</html>
